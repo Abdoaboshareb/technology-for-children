@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ركن الأنشطة التفاعلية للطفل | تكنولوجيا الطفل</title>
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/activities.css" />
+</head>
+<body data-root="../" data-page="activities">
+  <div id="site-header"></div>
+
+  <main class="container">
+    <div class="page-header">
+      <h1>ركن الأنشطة التفاعلية للطفل (4–6 سنوات)</h1>
+      <p>تجربة لعب واستكشاف قصيرة مع الشخصية المرشدة "فَصيح"، وبإشراف المعلمة أو ولي الأمر.</p>
+    </div>
+
+    <!-- Guiding Mascot -->
+    <div class="mascot-box">
+      <div class="mascot-avatar" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="52" r="34" fill="#ebe2fc" stroke="#523091" stroke-width="4"/>
+          <circle cx="38" cy="46" r="5" fill="#1e293b"/>
+          <circle cx="62" cy="46" r="5" fill="#1e293b"/>
+          <path d="M 38 64 Q 50 74 62 64" fill="none" stroke="#1b6b54" stroke-width="4" stroke-linecap="round"/>
+          <line x1="50" y1="18" x2="50" y2="8" stroke="#f27427" stroke-width="4"/>
+          <circle cx="50" cy="7" r="5" fill="#f27427"/>
+        </svg>
+      </div>
+      <div class="speech-bubble">
+        <p id="mascot-message" style="font-weight:700;">مرحباً يا بطل! اضغط على كل أداة لنتعرف عليها معاً.</p>
+        <div class="btn-group" style="margin-top:0.65rem;">
+          <button type="button" class="btn btn-mint" id="btn-mascot-speak" style="min-height:40px;padding:0.4rem 0.9rem;font-size:0.9rem;">🔊 اسمع التعليمات</button>
+          <button type="button" class="btn btn-outline" id="btn-teacher-mode" style="min-height:40px;padding:0.4rem 0.9rem;font-size:0.9rem;">👩‍🏫 وضع المعلمة / ولي الأمر</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-Step Visual Progress Tracker -->
+    <div class="stepper" role="tablist">
+      <button type="button" class="step-pill active" data-step="1">1️⃣ أشاهد وأتعرّف</button>
+      <button type="button" class="step-pill" data-step="2">2️⃣ أجرب وأختار</button>
+      <button type="button" class="step-pill" data-step="3">3️⃣ أراجع وأطبق بالواقع</button>
+    </div>
+
+    <!-- Step 1: Watch & Explore -->
+    <section class="step-panel active card" data-step="1">
+      <h2>الخطوة الأولى: هيا نتعرف على أدوات التقنية الآمنة</h2>
+      <p>اضغط على كل بطاقة لتسمع كيف نستخدم الأداة بأمان:</p>
+      <div class="choice-grid">
+        <button type="button" class="choice-btn learn-card" data-say="الكاميرا أداة جميلة نلتقط بها صوراً لرسوماتنا ورحلاتنا بإذن المعلمة.">
+          <span class="choice-icon">📷</span>
+          <span>الكاميرا</span>
+        </button>
+        <button type="button" class="choice-btn learn-card" data-say="سماعة الأذن تساعدنا على سماع القصص الصوتية بهدوء دون إزعاج الآخرين.">
+          <span class="choice-icon">🎧</span>
+          <span>سماعة الأذن</span>
+        </button>
+        <button type="button" class="choice-btn learn-card" data-say="الجهاز اللوحي نستخدمه في الألعاب المفيدة لوقت قصير ثم نلعب بألعابنا الواقعية.">
+          <span class="choice-icon">📱</span>
+          <span>الجهاز اللوحي</span>
+        </button>
+      </div>
+      <button type="button" class="btn btn-lavender" data-goto="2">انتقل للخطوة الثانية: هيا نجرب! ←</button>
+    </section>
+
+    <!-- Step 2: Try & Choose -->
+    <section class="step-panel card" data-step="2">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+        <h2>الخطوة الثانية: لعبة الاختيار الذكي</h2>
+        <div class="stars-bar" id="stars-display" aria-label="النجوم المكتسبة">☆☆☆</div>
+      </div>
+      <p id="quiz-prompt" style="font-size:1.15rem;font-weight:700;margin-top:0.75rem;"></p>
+      <div class="choice-grid" id="quiz-options"></div>
+      <div class="feedback-banner" id="quiz-feedback" aria-live="polite"></div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-mint" id="btn-next-q" style="display:none;">السؤال التالي ←</button>
+      </div>
+    </section>
+
+    <!-- Step 3: Review & Real-World Link -->
+    <section class="step-panel card mint" data-step="3">
+      <h2>الخطوة الثالثة: أحسنت يا بطل!</h2>
+      <p>حصيلتك من النجوم في هذه المغامرة:</p>
+      <div class="stars-bar" id="final-stars">⭐⭐⭐</div>
+      <div class="card" style="margin:1rem 0;">
+        <h3>🧩 نشاطنا الواقعي بعيداً عن الشاشة:</h3>
+        <p>احمل عدسة مكبرة ورقية أو لعبة كاميرا في الفصل، وابحث عن 3 أشياء مفضلة لديك في ركن الاكتشاف، ثم احكِ لمعلمتك وزملائك ماذا التقطت!</p>
+      </div>
+      <button type="button" class="btn btn-lavender" id="btn-restart">🔄 أريد اللعب مرة أخرى</button>
+    </section>
+
+    <!-- Teacher / Parent Supervision Panel -->
+    <aside class="teacher-panel hidden" id="teacher-panel">
+      <h3>👩‍🏫 دليل المعلمة وولي الأمر (تحكم وتمايز)</h3>
+      <ul class="clean-list">
+        <li><strong>الأهداف السلوكية للطفل:</strong> أن يسمي الطفل أداتين تقنيتين مألوفتين، ويميز استخداماً آمناً واحداً للجهاز اللوحي.</li>
+        <li><strong>مؤشر النجاح:</strong> إجابة الطفل على الأسئلة الثلاثة مع الاستفادة من التلميحات الصوتية والمناقشة الشفهية.</li>
+      </ul>
+      <div style="margin-top:1rem;">
+        <label for="level-select" style="font-weight:700;">مراعاة الفروق الفردية (اختيار مستوى النشاط): </label>
+        <select id="level-select" style="padding:0.45rem;border-radius:8px;font-family:inherit;">
+          <option value="1">المستوى الأول: التعرف على الأدوات (4–5 سنوات)</option>
+          <option value="2">المستوى الثاني: الأمان الرقمي والسلوك الصحيح (5–6 سنوات)</option>
+        </select>
+      </div>
+    </aside>
+
+    <div class="page-bottom-nav" id="page-bottom-nav"></div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="../js/main.js"></script>
+  <script src="../js/activities.js"></script>
+</body>
+</html>

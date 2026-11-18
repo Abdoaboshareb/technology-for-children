@@ -1,0 +1,48 @@
+:root {
+  /* Brand Palette (Original Mint, Lavender, Orange — Adjusted for High Contrast) */
+  --mint-bg: #d9f2e8;
+  --mint-accent: #1b6b54;
+  --mint-border: #8fd3ba;
+
+  --lavender-bg: #ebe2fc;
+  --lavender-accent: #523091;
+  --lavender-border: #c5b0f5;
+
+  --orange-bg: #fff1e6;       /* Lightened card body so black text is crisp */
+  --orange-header: #f27427;   /* Accessible dark-enough orange for white text/badges */
+  --orange-accent: #a64308;
+  --orange-border: #f9b689;
+
+  /* Neutrals */
+  --bg-page: #f8fafc;
+  --bg-surface: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #475569;
+  --border-light: #e2e8f0;
+
+  /* Status Colors */
+  --success-bg: #dcfce7;
+  --success-text: #166534;
+  --hint-bg: #fef9c3;
+  --hint-text: #854d0e;
+
+  /* Typography & Sizing */
+  --font-family: 'Tajawal', 'Segoe UI', Tahoma, Arial, sans-serif;
+  --base-font-size: 17px;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.09);
+}
+
+/* High Contrast Accessibility Mode */
+body.high-contrast {
+  --bg-page: #ffffff;
+  --bg-surface: #ffffff;
+  --text-main: #000000;
+  --text-muted: #111111;
+  --mint-bg: #e6fff5;
+  --lavender-bg: #f3ecff;
+  --orange-bg: #fff5eb;
+  --border-light: #000000;
+}

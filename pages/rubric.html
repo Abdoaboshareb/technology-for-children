@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سلم التقييم التفاعلي | تكنولوجيا الطفل</title>
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-root="../" data-page="rubric">
+  <div id="site-header"></div>
+
+  <main class="container">
+    <div class="page-header">
+      <h1>سلم التقييم التفاعلي (EDU 314)</h1>
+      <p>اضغط على المستوى الذي ينطبق على الموقع في كل صف لحساب الدرجة النهائية تلقائياً.</p>
+    </div>
+
+    <div class="card mint" style="margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <strong>الدرجة المحتسبة: <span id="rubric-total" style="font-size:1.3rem;">0 / 20</span></strong>
+        <p id="rubric-status">اختر خانة من كل معيار للبدء في التقييم.</p>
+      </div>
+      <button type="button" class="btn btn-outline" id="btn-reset-rubric">🔄 إعادة التقييم</button>
+    </div>
+
+    <div class="table-wrap">
+      <table class="rubric-table">
+        <thead>
+          <tr>
+            <th>المعيار</th>
+            <th>ممتاز (4 نقاط)</th>
+            <th>جيد جداً (3 نقاط)</th>
+            <th>يحتاج تحسين (2 نقطتان)</th>
+            <th>غير مكتمل (1 نقطة)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="rubric-row">
+            <td><strong>1. وضوح الهدف والفئة المستهدفة</strong></td>
+            <td class="rubric-option" data-score="4">تحديد واضح لمسار الطالبة ومسار طفل الروضة (4–6 سنوات) بأهداف قابلة للملاحظة.</td>
+            <td class="rubric-option" data-score="3">الهدف العام واضح لكن تحديد العمر أو دور المعلمة يحتاج تفصيلاً.</td>
+            <td class="rubric-option" data-score="2">غموض في التمييز بين عرض المقرر واستخدام الطفل.</td>
+            <td class="rubric-option" data-score="1">لا توجد أهداف أو فئة محددة.</td>
+          </tr>
+          <tr class="rubric-row">
+            <td><strong>2. التصميم التعليمي والتفاعلية</strong></td>
+            <td class="rubric-option" data-score="4">تسلسل متدرج (مشاهدة، تجربة، مراجعة)، تلميحات إيجابية، وأنشطة واقعية.</td>
+            <td class="rubric-option" data-score="3">تنظيم جيد للأقسام مع نشاط تفاعلي محدود.</td>
+            <td class="rubric-option" data-score="2">اعتماد على عرض النصوص والروابط دون تفاعل حقيقي.</td>
+            <td class="rubric-option" data-score="1">غياب التسلسل التعليمي والأنشطة.</td>
+          </tr>
+          <tr class="rubric-row">
+            <td><strong>3. تصميم الشاشة وسلامة اللغة</strong></td>
+            <td class="rubric-option" data-score="4">ألوان متناسقة، تباين عالٍ، خط واضح، وخلو تام من الأخطاء الإملائية والترقيمية.</td>
+            <td class="rubric-option" data-score="3">تصميم جميل مع ملاحظات طفيفة في حجم الخط أو التباين.</td>
+            <td class="rubric-option" data-score="2">نصوص كثيفة أو أخطاء إملائية وترقيمية متكررة.</td>
+            <td class="rubric-option" data-score="1">واجهة مزدحمة وصعبة القراءة.</td>
+          </tr>
+          <tr class="rubric-row">
+            <td><strong>4. المعايير الفنية وإمكانية الوصول</strong></td>
+            <td class="rubric-option" data-score="4">أدوات تكبير الخط، دعم صوتي، تجاوب مع الجوال، وتنبيه قبل الروابط الخارجية.</td>
+            <td class="rubric-option" data-score="3">تنقل مستقر وروابط تعمل دون أدوات وصول إضافية.</td>
+            <td class="rubric-option" data-score="2">نقص أزرار العودة في بعض الصفحات أو عدم اختبار الجوال.</td>
+            <td class="rubric-option" data-score="1">روابط معطلة ومشاكل تصفح واضحة.</td>
+          </tr>
+          <tr class="rubric-row">
+            <td><strong>5. اكتمال المكونات والمصادر</strong></td>
+            <td class="rubric-option" data-score="4">اكتمال السيرة، الفلسفة، التفكر، الأعمال الثلاثة، ومصادر مرتبطة بالطفل.</td>
+            <td class="rubric-option" data-score="3">اكتمال أغلب الصفحات مع حاجة لتوثيق أفضل للمصادر.</td>
+            <td class="rubric-option" data-score="2">نقص في النماذج أو استخدام مصادر غير مرتبطة بالموضوع.</td>
+            <td class="rubric-option" data-score="1">محتوى ناقص أو غير منسجم.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="page-bottom-nav" id="page-bottom-nav"></div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="../js/main.js"></script>
+  <script src="../js/rubric.js"></script>
+</body>
+</html>

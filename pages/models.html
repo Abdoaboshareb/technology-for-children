@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بعض النماذج التطبيقية | تكنولوجيا الطفل</title>
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-root="../" data-page="models">
+  <div id="site-header"></div>
+
+  <main class="container">
+    <div class="page-header">
+      <h1>بعض النماذج التطبيقية</h1>
+      <p>نماذج استرشادية توضح كيفية عرض واجبات المقرر وبناء ملف الإنجاز بصورة احترافية.</p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card lavender">
+        <span class="card-badge">نموذج 1</span>
+        <h3>نموذج نقد برمجية تعليمية</h3>
+        <p>يعرض كيفية تحليل لعبة أو تطبيق موجه لطفل الروضة من حيث التصميم التعليمي والأمان.</p>
+        <button type="button" class="btn btn-lavender open-model" data-title="نموذج 1: بطاقة نقد برمجية تعليمية" data-body="يتضمن هذا النموذج: (1) اسم البرمجية والفئة العمرية، (2) نقاط القوة في التفاعل والألوان، (3) مواطن القصور مثل غياب الصوت، (4) مقترحات المعلمة للتطوير الميداني.">👁️ معاينة النموذج</button>
+      </article>
+
+      <article class="card orange">
+        <span class="card-badge">نموذج 2</span>
+        <h3>نموذج الدرس التفاعلي</h3>
+        <p>يعرض هيكلة درس قصير عن "الأدوات التكنولوجية" متدرج من التهيئة إلى اللعب والتطبيق الواقعي.</p>
+        <button type="button" class="btn btn-orange open-model" data-title="نموذج 2: خطة درس تفاعلي للروضة" data-body="يبدأ الدرس بقصة مصورة (دقيقتان)، يليه نشاط اختيار تفاعلي مع تلميحات صوتية، وينتهي بنشاط حركي في ركن الفن لتشكيل أداة تقنية بالصلصال.">👁️ معاينة النموذج</button>
+      </article>
+
+      <article class="card mint">
+        <span class="card-badge">نموذج 3</span>
+        <h3>نموذج صحيفة التفكر</h3>
+        <p>يعرض أسلوب كتابة التأمل الذاتي للطالبة حول تطور مهاراتها الرقمية خلال الفصل الدراسي.</p>
+        <button type="button" class="btn btn-mint open-model" data-title="نموذج 3: كتابة صحيفة التفكر" data-body="تجيب الطالبة بوضوح عن: ماذا كنت أظن عن تكنولوجيا الطفل قبل المقرر؟ ما المهارة الجديدة التي اكتسبتها؟ وكيف سأوظفها بأمان مع أطفال الروضة مستقبلاً؟">👁️ معاينة النموذج</button>
+      </article>
+    </div>
+
+    <div class="page-bottom-nav" id="page-bottom-nav"></div>
+  </main>
+
+  <!-- Model Preview Modal -->
+  <div class="modal-backdrop" id="model-modal" role="dialog" aria-modal="true" aria-labelledby="model-modal-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="model-modal-title">معاينة النموذج</h3>
+        <button type="button" class="btn btn-outline" id="model-close" style="min-height:38px;padding:0.3rem 0.7rem;">✕</button>
+      </div>
+      <p id="model-modal-body"></p>
+      <div class="btn-group">
+        <button type="button" class="btn btn-mint" id="model-ok">فهمت، إغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="../js/main.js"></script>
+  <script>
+    const mModal = document.getElementById('model-modal');
+    document.querySelectorAll('.open-model').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.getElementById('model-modal-title').textContent = btn.dataset.title;
+        document.getElementById('model-modal-body').textContent = btn.dataset.body;
+        mModal.classList.add('open');
+      });
+    });
+    const closeModel = () => mModal.classList.remove('open');
+    document.getElementById('model-close').addEventListener('click', closeModel);
+    document.getElementById('model-ok').addEventListener('click', closeModel);
+  </script>
+</body>
+</html>
